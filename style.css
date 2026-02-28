@@ -1,0 +1,84 @@
+/* 1. Importar fuente profesional */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+/* 2. Fondo y Fuente Global */
+.stApp {
+    background: radial-gradient(circle at top right, #1e293b, #0f172a) !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 1.2rem !important;
+}
+
+/* 3. Estilo para los bloques de sección (Tarjetas) */
+/* Nota: Asegúrate de envolver tus niveles en st.markdown('<div class="main-card">', unsafe_allow_html=True) */
+.main-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Corrección para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* 4. Títulos con gradiente (CORREGIDO) */
+/* He añadido display: inline-block para que el gradiente no se corte */
+h1, h2 {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #60a5fa; /* Fallback si falla el gradiente */
+    font-weight: 800 !important;
+    display: table; /* Evita que el fondo ocupe todo el ancho */
+}
+
+h3 {
+    font-size: 1.6rem !important; 
+    color: #f8fafc !important;
+}
+
+/* 5. Sidebar Pro */
+[data-testid="stSidebar"] {
+    background-color: #0f172a !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 6. Botones con Estilo Dashboard */
+.stButton > button {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.stButton > button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+/* 7. KPIs unificados */
+[data-testid="stMetric"] {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    padding: 15px !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+}
+[data-testid="stMetricValue"] {
+    font-size: 2.5rem !important; /* El número del KPI ahora destaca mucho más */
+}
+
+/* 5. Agrandar texto dentro de las tablas */
+.stDataFrame div {
+    font-size: 1.1rem !important;
+}
+
+/* 6. Aumentar tamaño de las etiquetas del Sidebar */
+[data-testid="stSidebar"] label {
+    font-size: 1.2rem !important;
+    font-weight: bold;
+}
