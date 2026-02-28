@@ -7,7 +7,7 @@
 
 **SentAI Scan** es una plataforma avanzada de **Inteligencia de Negocio y Análisis de Tendencias** diseñada para monitorizar la percepción pública sobre la Inteligencia Artificial en tiempo real. Este sistema extrae datos masivos de comunidades especializadas, aplica modelos de Machine Learning y genera un dashboard interactivo de alta fidelidad.
 
-## 🚀 Acceso al Sistema
+##  Acceso al Sistema
 Cualquier usuario puede acceder a la instancia en producción a través del siguiente enlace:
 👉 https://sentai-scan.streamlit.app/
 
@@ -31,7 +31,7 @@ El sistema presenta los resultados siguiendo una jerarquía de análisis de dato
 * **Nivel 3 (Detalle Semántico):** Análisis comparativo de perfiles y tabla de impacto por interacciones.
 * **Nivel 4 (Persistencia):** Histórico de análisis almacenado en una base de datos **SQLite**.
 
-## 🐳 Despliegue e Infraestructura
+##  Despliegue e Infraestructura
 
 Este proyecto ha sido diseñado bajo principios de **Software Engineering**:
 * **Dockerización:** Incluye un `Dockerfile` que encapsula todas las dependencias y recursos de NLTK, garantizando la reproducibilidad del entorno en cualquier host.
