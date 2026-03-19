@@ -1,7 +1,5 @@
-# Despliegue alternativo — producción via Streamlit Cloud
-
 # 1. Imagen base oficial de Python
-FROM python:3.10-slim
+FROM python:3.9-slim
 
 # 2. Configuración del directorio de trabajo
 WORKDIR /app
@@ -19,7 +17,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. Descargar recursos de NLTK (los que OneDrive bajaba antes)
 RUN python -m textblob.download_corpora
-RUN python -c "import nltk; nltk.download('stopwords'); nltk.download('wordnet'); nltk.download('vader_lexicon')"
 
 # 6. Copiar el resto del código y la DB
 COPY . .

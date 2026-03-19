@@ -1,13 +1,7 @@
 streamlit
 pandas
 plotly
-requests
+textblob
 scikit-learn
 nltk
-textblob
-vaderSentiment
-transformers
-wordcloud
-matplotlib
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.2.2+cpu
+requests
