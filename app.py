@@ -109,7 +109,7 @@ with st.sidebar:
     }
     seleccion = st.selectbox("Comunidad:", list(opciones_ia.keys()))
     sub = opciones_ia[seleccion]
-    num = st.select_slider("Muestra:", options=[100, 500, 1000, 2000])
+    num = st.select_slider("Muestra:", options=[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000])
     lanzar = st.button("🚀 EJECUTAR ANÁLISIS")
     st.markdown("---")
     st.caption("SentAI-Scan · TFG 2025")
