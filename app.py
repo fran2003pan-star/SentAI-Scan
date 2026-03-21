@@ -266,7 +266,7 @@ st.markdown("""
     </div>
     <p class="hero-sub">
       Escáner inteligente de sentimiento en comunidades de Reddit.<br>
-      Detecta tendencias, perfiles y emociones usando VADER y RoBERTa.
+      Detecta tendencias, perfiles y emociones en posts sobre IA
     </p>
   </div>
 </div>
