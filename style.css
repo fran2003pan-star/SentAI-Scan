@@ -8,12 +8,23 @@
     font-size: 1.2rem !important;
 }
 
-/* 3. Estilo para los bloques de sección (Tarjetas) */
-/* Nota: Asegúrate de envolver tus niveles en st.markdown('<div class="main-card">', unsafe_allow_html=True) */
+/* 3. Header principal */
+.main-header {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* 4. Tarjetas de sección */
 .main-card {
     background: rgba(30, 41, 59, 0.4);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Corrección para Safari */
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 30px;
@@ -21,30 +32,29 @@
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* 4. Títulos con gradiente (CORREGIDO) */
-/* He añadido display: inline-block para que el gradiente no se corte */
+/* 5. Títulos con gradiente */
 h1, h2 {
     background: linear-gradient(90deg, #60a5fa, #a78bfa);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #60a5fa; /* Fallback si falla el gradiente */
+    color: #60a5fa;
     font-weight: 800 !important;
-    display: table; /* Evita que el fondo ocupe todo el ancho */
+    display: table;
 }
 
 h3 {
-    font-size: 1.6rem !important; 
+    font-size: 1.6rem !important;
     color: #f8fafc !important;
 }
 
-/* 5. Sidebar Pro */
+/* 6. Sidebar Pro */
 [data-testid="stSidebar"] {
     background-color: #0f172a !important;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 6. Botones con Estilo Dashboard */
+/* 7. Botones */
 .stButton > button {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6) !important;
     border: none !important;
@@ -59,7 +69,22 @@ h3 {
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
-/* 7. KPIs unificados */
+/* 8. Botones de descarga */
+[data-testid="stDownloadButton"] > button {
+    background: linear-gradient(90deg, #0f766e, #0369a1) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+[data-testid="stDownloadButton"] > button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+}
+
+/* 9. KPIs */
 [data-testid="stMetric"] {
     background: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -68,17 +93,23 @@ h3 {
     font-size: 1.1rem !important;
     font-weight: 600 !important;
 }
+
 [data-testid="stMetricValue"] {
-    font-size: 2.5rem !important; /* El número del KPI ahora destaca mucho más */
+    font-size: 2.5rem !important;
 }
 
-/* 5. Agrandar texto dentro de las tablas */
+/* 10. Tablas */
 .stDataFrame div {
     font-size: 1.1rem !important;
 }
 
-/* 6. Aumentar tamaño de las etiquetas del Sidebar */
+/* 11. Sidebar labels */
 [data-testid="stSidebar"] label {
     font-size: 1.2rem !important;
     font-weight: bold;
+}
+
+/* 12. Multiselect */
+[data-testid="stMultiSelect"] {
+    background: rgba(255, 255, 255, 0.03) !important;
 }
