@@ -10,6 +10,10 @@ from engine.ia_model import InnoAnalyzer
 # 1. CONFIGURACIÓN BASE
 # ─────────────────────────────────────────────
 st.set_page_config(page_title="SentAI-Scan", layout="wide", initial_sidebar_state="expanded")
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from navbar import render_navbar
+render_navbar(active="dashboard")
 
 def local_css(file_name):
     try:

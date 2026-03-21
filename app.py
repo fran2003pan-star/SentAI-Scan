@@ -5,6 +5,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
 )
+from navbar import render_navbar
+render_navbar(active="inicio")
 
 st.markdown("""
 <style>
