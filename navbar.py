@@ -77,19 +77,19 @@ div[data-testid="stHorizontalBlock"] button:hover {{
 
     with c1:
         st.markdown(f'<style>.nb1 button{{{active_style if active=="inicio" else inactive_style}}}</style><div class="nb1">', unsafe_allow_html=True)
-        if st.button("🏠 Inicio", use_container_width=True, key="nb_inicio"):
+        if st.button(" Inicio", use_container_width=True, key="nb_inicio"):
             st.switch_page("app.py")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with c2:
         st.markdown(f'<style>.nb2 button{{{active_style if active=="dashboard" else inactive_style}}}</style><div class="nb2">', unsafe_allow_html=True)
-        if st.button("📡 Dashboard", use_container_width=True, key="nb_dashboard"):
+        if st.button(" Dashboard", use_container_width=True, key="nb_dashboard"):
             st.switch_page("pages/1_Dashboard.py")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with c3:
         st.markdown(f'<style>.nb3 button{{{active_style if active=="sobre" else inactive_style}}}</style><div class="nb3">', unsafe_allow_html=True)
-        if st.button("👤 Sobre el TFG", use_container_width=True, key="nb_sobre"):
+        if st.button(" Sobre el TFG", use_container_width=True, key="nb_sobre"):
             st.switch_page("pages/2_Sobre_el_TFG.py")
         st.markdown('</div>', unsafe_allow_html=True)
 

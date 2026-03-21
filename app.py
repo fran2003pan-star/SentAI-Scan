@@ -328,7 +328,7 @@ draw();
 
 # ── BOTÓN CTA ──────────────────────────────────────────────────────────────────
 st.markdown('<div class="cta-center">', unsafe_allow_html=True)
-if st.button("🚀  Entrar al Dashboard  →"):
+if st.button(" Entrar al Dashboard  →"):
     st.switch_page("pages/1_Dashboard.py")
 st.markdown('</div>', unsafe_allow_html=True)
 
