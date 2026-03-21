@@ -9,11 +9,49 @@ from engine.ia_model import InnoAnalyzer
 # ─────────────────────────────────────────────
 # 1. CONFIGURACIÓN BASE
 # ─────────────────────────────────────────────
-st.set_page_config(page_title="SentAI-Scan", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="SentAI-Scan", layout="wide", initial_sidebar_state="collapsed")
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from navbar import render_navbar
 render_navbar(active="dashboard")
+
+st.markdown("""
+<style>
+[data-testid="stSidebar"] { display: none !important; }
+[data-testid="stSidebarCollapsedControl"] { display: none !important; }
+
+/* Card del panel de control */
+.panel-card {
+    background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08));
+    border: 1px solid rgba(96,165,250,0.2);
+    border-radius: 16px;
+    padding: 20px 24px 24px 24px;
+    margin-bottom: 28px;
+}
+.panel-label {
+    font-size: 0.78rem;
+    color: #60a5fa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+/* Botón analizar en rojo — solo el de la clase btn-red */
+.btn-red button {
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    color: white !important;
+    border: none !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 20px rgba(239,68,68,0.3) !important;
+    transition: all 0.2s ease !important;
+}
+.btn-red button:hover {
+    box-shadow: 0 0 30px rgba(239,68,68,0.5) !important;
+    transform: scale(1.02) !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 def local_css(file_name):
     try:
@@ -131,48 +169,40 @@ def interpretar_controversia(heat_data: pd.DataFrame) -> str:
         return f"Los posts de **{perfil_max_score}** reciben más upvotes, pero los de **{perfil_max_comments}** generan más debate en comentarios."
 
 # ─────────────────────────────────────────────
-# 4. SIDEBAR
+# 4. PANEL DE CONTROL
 # ─────────────────────────────────────────────
-with st.sidebar:
-    st.markdown("""
-        <div style='text-align:center; padding: 10px 0 5px 0;'>
-            <span style='font-size:2.5rem;'>🛰️</span>
-            <h2 style='margin:0; background: linear-gradient(90deg, #60a5fa, #a78bfa);
-                -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-                font-weight:800;'>SentAI-Scan</h2>
-            <p style='color:#94a3b8; font-size:0.8rem; margin:4px 0 0 0;'>
-                Análisis de Sentimiento en Reddit con IA
-            </p>
-        </div>
-    """, unsafe_allow_html=True)
+st.markdown('<div class="panel-card"><div class="panel-label">⚙️ Panel de Control</div>', unsafe_allow_html=True)
 
-    st.markdown("---")
-    st.markdown("### ⚙️ Configuración")
-    opciones_ia = {
-        "Artificial Intelligence": "ArtificialInteligence",
-        "Machine Learning":        "MachineLearning",
-        "ChatGPT & LLMs":          "ChatGPT"
-    }
-    seleccion = st.selectbox("Comunidad:", list(opciones_ia.keys()))
+opciones_ia = {
+    "Artificial Intelligence": "ArtificialInteligence",
+    "Machine Learning":        "MachineLearning",
+    "ChatGPT & LLMs":          "ChatGPT"
+}
+
+col_com, col_muestra, col_filtro, col_btn = st.columns([2, 2, 3, 1.2])
+
+with col_com:
+    seleccion = st.selectbox("🌐 Comunidad", list(opciones_ia.keys()), key="sel_comunidad")
     sub = opciones_ia[seleccion]
-    num = st.select_slider("Muestra:", options=[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000])
-    lanzar = st.button("🚀 EJECUTAR ANÁLISIS", use_container_width=True)
 
-    st.markdown("---")
-    st.markdown("### 🔍 Filtrar por Perfil")
+with col_muestra:
+    num = st.select_slider("📊 Muestra", options=[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], key="sel_muestra")
+
+with col_filtro:
     filtro_perfil = st.multiselect(
-        "Mostrar perfiles:",
+        "👥 Filtrar perfiles",
         options=["Tecnófilos (Innovación)", "Curiosos (Herramientas/Dudas)", "Preocupados (Ética/Riesgos)"],
-        default=["Tecnófilos (Innovación)", "Curiosos (Herramientas/Dudas)", "Preocupados (Ética/Riesgos)"]
+        default=["Tecnófilos (Innovación)", "Curiosos (Herramientas/Dudas)", "Preocupados (Ética/Riesgos)"],
+        key="sel_filtro"
     )
 
-    st.markdown("---")
-    st.markdown("### ℹ️ Acerca de")
-    st.caption("SentAI-Scan analiza el sentimiento de comunidades de Reddit usando NLP e IA.")
-    st.caption("Modelo: VADER + RoBERTa · Clustering: K-Means + TF-IDF")
-    st.markdown("---")
-    st.caption("SentAI-Scan · TFG 2025")
+with col_btn:
+    st.markdown("<div style='height:28px'></div>", unsafe_allow_html=True)
+    st.markdown('<div class="btn-red">', unsafe_allow_html=True)
+    lanzar = st.button("🚀 Analizar", use_container_width=True, key="btn_analizar")
+    st.markdown('</div>', unsafe_allow_html=True)
 
+st.markdown('</div>', unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────
 # 5. HEADER PRINCIPAL
@@ -190,7 +220,6 @@ st.markdown("""
         </div>
     </div>
 """, unsafe_allow_html=True)
-
 
 # ─────────────────────────────────────────────
 # 6. LÓGICA DE PROCESAMIENTO

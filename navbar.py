@@ -10,6 +10,12 @@ def render_navbar(active="inicio"):
 #MainMenu, footer {{ visibility: hidden; }}
 .block-container {{ padding-top: 10px !important; }}
 
+/* Botón sidebar siempre visible */
+[data-testid="stSidebarCollapsedControl"] {{
+    display: flex !important;
+    visibility: visible !important;
+}}
+
 .navbar {{
     display: flex;
     align-items: center;
