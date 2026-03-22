@@ -32,13 +32,13 @@ Limpieza con Regex, eliminación de stopwords y lematización con WordNetLemmati
 
 **3. Clustering**
 Vectorización TF-IDF con bigramas y segmentación K-Means en 3 clusters temáticos:
-- IA Generativa & LLMs
-- Automatización & Trabajo
-- Ética & Regulación
+- Tecnófilos
+- Curiosos
+- Preocupados
 
 **4. Análisis de sentimiento (2 niveles)**
 - **VADER** — análisis rápido de todos los posts, optimizado para redes sociales
-- **RoBERTa** (`cardiffnlp/twitter-roberta-base-sentiment`) — análisis profundo de los top 200 posts por puntuación
+- **RoBERTa**  — análisis profundo de los top 200 posts por puntuación
 
 Puntuación final: `60% RoBERTa + 40% VADER`
 
