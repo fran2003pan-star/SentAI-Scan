@@ -113,3 +113,8 @@ h3 {
 [data-testid="stMultiSelect"] {
     background: rgba(255, 255, 255, 0.03) !important;
 }
+/* Botón analizar rojo */
+.btn-red button {
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    box-shadow: 0 0 20px rgba(239,68,68,0.3) !important;
+}
