@@ -260,7 +260,7 @@ st.markdown("""
 
 <div class="landing-wrap">
   <div class="hero">
-    <div class="hero-badge">🛰️ &nbsp; TFG · Análisis de Sentimiento con IA</div>
+    <div class="hero-badge"> &nbsp; TFG · Análisis de Sentimiento con IA</div>
     <div class="hero-title">
       <span class="grad">SentAI</span><span class="white">-Scan</span>
     </div>

@@ -124,6 +124,7 @@ st.markdown(f"""
         <span class="badge">📊 Data Analysis</span>
         <span class="badge">🤖 NLP & IA</span>
         <span class="badge">🐍 Python</span>
+        <span class="badge">📈 Data Science</span>
       </div>
     </div>
   </div>
