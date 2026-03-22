@@ -253,13 +253,10 @@ if lanzar:
         st.warning("No hay datos para los perfiles seleccionados.")
         st.stop()
 
-    st.markdown(f"## 📡 Dashboard — r/{sub}")
-    st.markdown("---")
-
     # ════════════════════════════════════════════════════════════════════════
     # SECCIÓN 1 — TERMÓMETRO
     # ════════════════════════════════════════════════════════════════════════
-    st.markdown("### 1. 🌡️ Termómetro de Sentimiento")
+    st.markdown("### 1. Termómetro de Sentimiento")
     st.caption("Índice de polaridad global de la comunidad. Rango de -1 (muy negativo) a +1 (muy positivo).")
 
     col_gauge, col_metrics = st.columns([1.5, 1])
@@ -318,7 +315,7 @@ if lanzar:
     # ════════════════════════════════════════════════════════════════════════
     # SECCIÓN 2 — POSTS VIRALES
     # ════════════════════════════════════════════════════════════════════════
-    st.markdown("### 2. 🔥 Posts Virales vs Sentimiento")
+    st.markdown("### 2. Posts Virales vs Sentimiento")
     st.caption("Top 15 posts por puntuación. El color indica si el post genera debate positivo, neutro o negativo.")
 
     top15 = (
@@ -360,7 +357,7 @@ if lanzar:
     # ════════════════════════════════════════════════════════════════════════
     # SECCIÓN 3 — MAPA DE CONTROVERSIA
     # ════════════════════════════════════════════════════════════════════════
-    st.markdown("### 3. 🗺️ Mapa de Controversia por Perfil")
+    st.markdown("### 3.  Mapa de Controversia por Perfil")
     st.caption("¿Qué perfil genera más engagement? Cruza comentarios vs puntuación para detectar contenido polarizador.")
 
     col_heat, col_radar = st.columns(2)
@@ -431,7 +428,7 @@ if lanzar:
     # ════════════════════════════════════════════════════════════════════════
     # SECCIÓN 4 — WORDCLOUD
     # ════════════════════════════════════════════════════════════════════════
-    st.markdown("### 4. 💬 Vocabulario por Perfil")
+    st.markdown("### 4.  Vocabulario por Perfil")
     st.caption("Las palabras más frecuentes según el tipo de usuario. Revela qué preocupa o entusiasma a cada segmento.")
 
     try:
@@ -472,7 +469,7 @@ if lanzar:
     # ════════════════════════════════════════════════════════════════════════
     # SECCIÓN 5 — SEGMENTACIÓN Y DETALLE
     # ════════════════════════════════════════════════════════════════════════
-    st.markdown("### 5. 📊 Segmentación y Detalle")
+    st.markdown("### 5.  Segmentación y Detalle")
 
     col_tabla, col_barras = st.columns([1.2, 1])
 
