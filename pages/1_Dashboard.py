@@ -224,7 +224,7 @@ if lanzar:
     df_local = consultar_existentes(sub, num)
 
     if len(df_local) >= num:
-        st.success("⚡ Inteligencia recuperada del archivo local.")
+        st.success(" Inteligencia recuperada del archivo local.")
         df_final = df_local.head(num)
     else:
         with st.spinner(f"📥 Sincronizando nuevos datos de r/{sub}..."):
