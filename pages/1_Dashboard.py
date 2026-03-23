@@ -111,7 +111,7 @@ def guardar_en_sistema(df: pd.DataFrame, sub_name: str) -> bool:
 def consultar_existentes(subreddit_name: str, limite_requerido: int) -> pd.DataFrame:
     try:
         conn = sqlite3.connect("database/radar_innovacion_ia.db")
-        query = "SELECT * FROM analisis_reddit WHERE subreddit_origen = ? ORDER BY RANDOM() LIMIT ?"
+        query = "SELECT * FROM analisis_reddit WHERE subreddit_origen = ? ORDER BY puntuacion DESC LIMIT ?"
         df_local = pd.read_sql(query, conn, params=(subreddit_name, limite_requerido))
         conn.close()
         return df_local
