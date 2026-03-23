@@ -69,11 +69,7 @@ PERFIL_COLORS = {
     "Preocupados (Ética/Riesgos)":   "#ff4b4b"
 }
 
-PERFIL_EMOJI = {
-    "Tecnófilos (Innovación)":       "🚀",
-    "Curiosos (Herramientas/Dudas)": "🔍",
-    "Preocupados (Ética/Riesgos)":   "⚠️"
-}
+
 
 # ─────────────────────────────────────────────
 # 2. MOTOR DE PERSISTENCIA (DB)
@@ -182,15 +178,15 @@ opciones_ia = {
 col_com, col_muestra, col_filtro, col_btn = st.columns([2, 2, 3, 1.2])
 
 with col_com:
-    seleccion = st.selectbox("🌐 Comunidad", list(opciones_ia.keys()), key="sel_comunidad")
+    seleccion = st.selectbox(" Comunidad", list(opciones_ia.keys()), key="sel_comunidad")
     sub = opciones_ia[seleccion]
 
 with col_muestra:
-    num = st.select_slider("📊 Muestra", options=[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], key="sel_muestra")
+    num = st.select_slider(" Muestra", options=[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], key="sel_muestra")
 
 with col_filtro:
     filtro_perfil = st.multiselect(
-        "👥 Filtrar perfiles",
+        " Filtrar perfiles",
         options=["Tecnófilos (Innovación)", "Curiosos (Herramientas/Dudas)", "Preocupados (Ética/Riesgos)"],
         default=["Tecnófilos (Innovación)", "Curiosos (Herramientas/Dudas)", "Preocupados (Ética/Riesgos)"],
         key="sel_filtro"
@@ -199,7 +195,7 @@ with col_filtro:
 with col_btn:
     st.markdown("<div style='height:28px'></div>", unsafe_allow_html=True)
     st.markdown('<div class="btn-red">', unsafe_allow_html=True)
-    lanzar = st.button("🚀 Analizar", use_container_width=True, key="btn_analizar")
+    lanzar = st.button(" Analizar", use_container_width=True, key="btn_analizar")
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
@@ -210,7 +206,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 st.markdown("""
     <div class="main-header">
         <div style='display:flex; align-items:center; gap:16px;'>
-            <span style='font-size:3rem;'>🛰️</span>
+            <span style='font-size:3rem;'></span>
             <div>
                 <h1 style='margin:0; font-size:2.2rem;'>SentAI-Scan</h1>
                 <p style='margin:0; color:#94a3b8; font-size:1rem;'>
@@ -294,10 +290,10 @@ if lanzar:
         """, unsafe_allow_html=True)
 
     with col_metrics:
-        st.metric("📦 Volumen analizado",  f"{len(df_filtrado)} posts")
-        st.metric("🏷️ Tópico Dominante",   calcular_topico_dominante(df_filtrado))
-        st.metric("💬 Comentarios medios", f"{int(df_filtrado['num_comentarios'].mean())}")
-        st.metric("🔥 Post más viral",      f"{int(df_filtrado['puntuacion'].max())} pts")
+        st.metric(" Volumen analizado",  f"{len(df_filtrado)} posts")
+        st.metric(" Tópico Dominante",   calcular_topico_dominante(df_filtrado))
+        st.metric(" Comentarios medios", f"{int(df_filtrado['num_comentarios'].mean())}")
+        st.metric(" Post más viral",      f"{int(df_filtrado['puntuacion'].max())} pts")
         if 'fuente_sentimiento' in df_filtrado.columns:
             n_roberta = (df_filtrado['fuente_sentimiento'] == 'RoBERTa+VADER').sum()
             st.caption(f"🤖 {n_roberta} posts analizados con RoBERTa+VADER")
@@ -456,8 +452,7 @@ if lanzar:
             ax.axis('off')
             fig_wc.patch.set_facecolor('none')
             with cols_wc[i]:
-                emoji = PERFIL_EMOJI.get(perfil, "")
-                st.markdown(f"**{emoji} {perfil}**")
+                st.markdown(f"** {perfil}**")
                 st.pyplot(fig_wc, use_container_width=True)
             plt.close(fig_wc)
 
@@ -503,7 +498,7 @@ if lanzar:
     # ════════════════════════════════════════════════════════════════════════
     # SECCIÓN 6 — EXPORTAR DATOS
     # ════════════════════════════════════════════════════════════════════════
-    st.markdown("### 6. 📥 Exportar Datos")
+    st.markdown("### 6.  Exportar Datos")
     st.caption("Descarga el dataset analizado para uso externo o investigación.")
 
     col_exp1, col_exp2, col_exp3 = st.columns(3)
