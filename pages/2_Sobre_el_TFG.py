@@ -130,7 +130,7 @@ st.markdown(f"""
   </div>
 
   <div class="section-card">
-    <h2>🛰️ Sobre el Proyecto</h2>
+    <h2> Sobre el Proyecto</h2>
    <p>
   <strong style="color:#e2e8f0;">SentAI-Scan</strong> es un sistema de análisis de sentimiento aplicado a comunidades 
   de inteligencia artificial en Reddit. El proyecto combina técnicas de Procesamiento del Lenguaje Natural (NLP) 
@@ -139,7 +139,7 @@ st.markdown(f"""
   (VADER + RoBERTa) y los clasifica en tres perfiles: <em>Tecnófilos</em>, <em>Curiosos</em> y <em>Preocupados</em>, 
   ofreciendo una visión integral del estado emocional de la comunidad tecnológica global.<br><br>
 
-  <strong style="color:#e2e8f0;">⚠️ Nota técnica sobre el despliegue:</strong><br>
+  <strong style="color:#e2e8f0;"> Nota técnica sobre el despliegue:</strong><br>
   <span style="color:#94a3b8;">
   La plataforma de Reddit cerró el acceso gratuito a su API oficial en 2023, lo que imposibilitó obtener 
   credenciales para este proyecto. Por este motivo, la versión desplegada opera en <strong style="color:#e2e8f0;">modo demo</strong> 
@@ -153,7 +153,7 @@ st.markdown(f"""
   </div>
 
   <div class="section-card">
-    <h2>⚙️ Tecnologías Utilizadas</h2>
+    <h2> Tecnologías Utilizadas</h2>
     <div class="tech-row">
       <div class="tech-item"><div class="t-name">⚡ VADER</div><div class="t-desc">Análisis de sentimiento optimizado para redes sociales. Entiende mayúsculas, emojis y negaciones.</div></div>
       <div class="tech-item"><div class="t-name">🤖 RoBERTa</div><div class="t-desc">Modelo transformer fine-tuneado sobre 58M tweets para análisis profundo de los posts más virales.</div></div>
@@ -165,7 +165,7 @@ st.markdown(f"""
   </div>
 
   <div class="section-card">
-    <h2>👨‍🏫 Tutor Académico</h2>
+    <h2> Tutor Académico</h2>
     <div class="tutor-row">
       <div class="tutor-avatar">👨‍💼</div>
       <div class="tutor-info">
