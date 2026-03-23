@@ -254,6 +254,16 @@ st.markdown("""
     animation: fadeDown 0.8s 0.45s ease forwards;
     opacity: 0;
 }
+
+            .cta-center > div {
+    display: flex;
+    justify-content: center;
+}
+
+.cta-center button {
+    margin: 0 auto !important;
+}
+            
 </style>
 
 <canvas id="particle-canvas"></canvas>
