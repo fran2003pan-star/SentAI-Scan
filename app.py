@@ -337,9 +337,9 @@ st.markdown("""
 <div class="landing-wrap">
   <div class="stats-bar">
     <div class="stat-item"><div class="stat-number">+ 3K</div><div class="stat-label">Posts analizados</div></div>
-    <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Comunidades de IA</div></div>
+    <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Comunidades de IA (DEMO)</div></div>
     <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Modelos NLP</div></div>
-    <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Perfiles de usuario (DEMO)</div></div>
+    <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Perfiles de usuario </div></div>
   </div>
 
   <div class="how-section">
