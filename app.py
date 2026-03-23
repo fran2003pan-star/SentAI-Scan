@@ -347,19 +347,19 @@ st.markdown("""
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-number">01</div>
-        <div class="step-icon">📡</div>
+        <div class="step-icon"></div>
         <div class="step-title">Extracción de datos</div>
         <div class="step-desc">Se conecta a Reddit y extrae hasta 1000 títulos de posts de la comunidad seleccionada usando su API pública.</div>
       </div>
       <div class="step-card">
         <div class="step-number">02</div>
-        <div class="step-icon">🧠</div>
+        <div class="step-icon"></div>
         <div class="step-title">Análisis con IA</div>
         <div class="step-desc">Pipeline de dos niveles: VADER analiza todos los posts, RoBERTa profundiza en los más virales para mayor precisión.</div>
       </div>
       <div class="step-card">
         <div class="step-number">03</div>
-        <div class="step-icon">👥</div>
+        <div class="step-icon"></div>
         <div class="step-title">Segmentación</div>
         <div class="step-desc">K-Means + TF-IDF agrupa los posts en clusters temáticos y clasifica a los usuarios en 3 perfiles de innovación.</div>
       </div>
