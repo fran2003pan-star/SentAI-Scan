@@ -113,3 +113,16 @@ h3 {
 [data-testid="stMultiSelect"] {
     background: rgba(255, 255, 255, 0.03) !important;
 }
+
+/* Forzar colores visibles en todos los modos */
+.stApp p, .stApp span, .stApp div {
+    color: #e2e8f0;
+}
+
+[data-testid="stCaptionContainer"] p {
+    color: #94a3b8 !important;
+}
+
+[data-testid="stMarkdownContainer"] p {
+    color: #e2e8f0 !important;
+}

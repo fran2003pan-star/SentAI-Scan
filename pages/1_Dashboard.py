@@ -284,7 +284,7 @@ if lanzar:
         texto_interp, color_interp, emoji_interp = interpretar_sentimiento(avg_s)
         st.markdown(f"""
             <div style='background:rgba(255,255,255,0.05); border-left: 3px solid {color_interp};
-                border-radius:8px; padding:12px 16px; margin-top:8px;'>
+            border-radius:8px; padding:12px 16px; margin-top:8px; color:#e2e8f0;'>
                 {emoji_interp} {texto_interp}
             </div>
         """, unsafe_allow_html=True)
