@@ -61,7 +61,12 @@ def local_css(file_name):
         pass
 
 local_css("style.css")
-analyzer = InnoAnalyzer()
+
+@st.cache_resource
+def get_analyzer():
+    return InnoAnalyzer()
+
+analyzer = get_analyzer()
 
 PERFIL_COLORS = {
     "Tecnófilos (Innovación)":       "#00fbff",
@@ -216,6 +221,14 @@ st.markdown("""
         </div>
     </div>
 """, unsafe_allow_html=True)
+
+if analyzer.roberta is not None:
+    st.caption("✅ Motor híbrido activo: VADER en todo el corpus + RoBERTa en el top 200 por upvotes.")
+else:
+    st.warning(
+        "⚠️ RoBERTa no está cargado en este entorno (faltan dependencias o falló la descarga). "
+        "Los análisis nuevos usarán solo VADER."
+    )
 
 # ─────────────────────────────────────────────
 # 6. LÓGICA DE PROCESAMIENTO

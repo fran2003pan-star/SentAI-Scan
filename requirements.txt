@@ -8,3 +8,5 @@ textblob
 vaderSentiment
 wordcloud
 matplotlib
+transformers
+torch
